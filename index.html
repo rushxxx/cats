@@ -10,20 +10,34 @@
 </head>
 <body>
 	<header class="header">
+		<div class="header-bg abs">
+			<img src="img/header_bg.jpg" alt="" class="img-cover">
+		</div>
 		<div class="c">
-			<div class="header-wrap">
-				<div class="logo-wrap">
-					<img src="" alt="" class="logo">
+			<div class="header-wrap flex-sb-cen">
+				<div class="logo">
+					<img src="img/logo.svg" alt="logo" class="img-cover">
 				</div>
-				<nav class="main_menu">
-					<ul>
-						<li>Main</li>
-						<li>Gallery</li>
-						<li>News</li>
-						<li>Profile</li>
-					</ul>
-				</nav>
-				<div class="header-phone">
+				<div class="menu-burger">
+	                <span></span>
+	            </div>
+				<nav class="menu">
+	                <ul>
+	                    <li>
+	                        <a href="#">Main</a>
+	                    </li>
+	                    <li>
+	                        <a href="#">Gallery</a>
+	                    </li>
+	                    <li>
+	                        <a href="#">News</a>
+	                    </li>
+	                    <li>
+	                        <a href="#">Profile</a>
+	                    </li>
+	                </ul>
+	            </nav>
+				<div class="header-phone flex-col">
 					<a href="tel:+544349000000">+544 3490 00000</a>
 					<span>Звони скорее!</span>
 				</div>
@@ -41,13 +55,79 @@
 		<div class="c">
 			<div class="sort-wrap">
 				<span class="sort-text">Сортировать по:</span>
-				<button class="sort-button">Цене</button>
-				<button class="sort-button">Возрасту</button>
+				<button class="sort-button">Цене <span>^</span></button>
+				<button class="sort-button">Возрасту <span>^</span></button>
 			</div>
 			<ul class="card-list">
 				<li class="card-item">
+					<div class="card-promo">-40%</div>
+					<div class="card-heart">
+						<svg class="card-heart-pic" width="46" height="42" viewBox="0 0 46 42" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+							<path d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z"/>
+						</svg>
+					</div>
 					<div class="card-pic">
-						<img src="" alt="">
+						<img src="img/1.jpg" alt="card pic" class="img-cover">
+					</div>
+					<div class="card-desc-wrap">
+						<h3 class="card-title">Кот полосатый</h3>
+						<div class="card-desc">
+							<div class="card-color">
+								<span class="color-value">Коричневый</span>
+								<span>окрас</span>
+							</div>
+							<div class="card-age">
+								<span class="age-value">2 мес.</span>
+								<span>Возраст</span>
+							</div>
+							<div class="card-foot">
+								<span class="foot-value">4</span>
+								<span>Кол-во лап</span>
+							</div>
+						</div>
+						<span class="card-price">20 000 руб.</span>
+					</div>
+					<button class="card-button">Купить</button>
+				</li>
+				<li class="card-item">
+					<div class="card-promo hide"></div>
+					<div class="card-heart">
+						<svg class="card-heart-pic" width="46" height="42" viewBox="0 0 46 42" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+							<path d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z"/>
+						</svg>
+					</div>
+					<div class="card-pic">
+						<img src="img/2.jpg" alt="card pic" class="img-cover">
+					</div>
+					<div class="card-desc-wrap">
+						<h3 class="card-title">Кот полосатый</h3>
+						<div class="card-desc">
+							<div class="card-color">
+								<span class="color-value">Коричневый</span>
+								<span>окрас</span>
+							</div>
+							<div class="card-age">
+								<span class="age-value">2 мес.</span>
+								<span>Возраст</span>
+							</div>
+							<div class="card-foot">
+								<span class="foot-value">4</span>
+								<span>Кол-во лап</span>
+							</div>
+						</div>
+						<span class="card-price">10 000 руб.</span>
+					</div>
+					<button class="card-button btn-off" disabled>Продан</button>
+				</li>
+				<li class="card-item">
+					<div class="card-promo hide"></div>
+					<div class="card-heart">
+						<svg class="card-heart-pic" width="46" height="42" viewBox="0 0 46 42" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+							<path d="M33.7812 0.695312C31.2851 0.695312 28.9966 1.4863 26.9794 3.04634C25.0456 4.54197 23.758 6.44693 23 7.83214C22.242 6.44684 20.9544 4.54197 19.0206 3.04634C17.0034 1.4863 14.7149 0.695312 12.2188 0.695312C5.25298 0.695312 0 6.39293 0 13.9485C0 22.1112 6.55347 27.696 16.4746 36.1505C18.1593 37.5863 20.0689 39.2138 22.0538 40.9494C22.3154 41.1785 22.6514 41.3047 23 41.3047C23.3486 41.3047 23.6846 41.1785 23.9462 40.9495C25.9312 39.2136 27.8408 37.5862 29.5265 36.1496C39.4465 27.696 46 22.1112 46 13.9485C46 6.39293 40.747 0.695312 33.7812 0.695312Z"/>
+						</svg>
+					</div>
+					<div class="card-pic">
+						<img src="img/3.jpg" alt="card pic" class="img-cover">
 					</div>
 					<div class="card-desc-wrap">
 						<h3 class="card-title">Кот полосатый</h3>
@@ -70,7 +150,7 @@
 					<button class="card-button">Купить</button>
 				</li>
 			</ul>
-			<button class="add-cards">Показать еще 20</button>
+			<button class="btn secondary add-cards" id="add-cards">Показать еще 20</button>
 		</div>
 	</main>
 
@@ -81,10 +161,12 @@
 				<span class="promo-text">Подпишись и успей словить все акции</span>
 			</div>
 			<form action="" class="subscribe-form">
-				<input type="email" name="email" id="email" placeholder="Email" required>
-				<input type="checkbox" name="subscribe" id="subscribe">
-				<label for="subscribe">Подписаться на новости</label>
-				<button type="submit">Подписаться</button>
+				<input type="email" name="email" id="email" placeholder="Email" class="subscribe-form-input" required>
+				<button type="submit" class="btn primary">Подписаться</button>
+				<label for="subscribe">
+					<input type="checkbox" name="subscribe" id="subscribe" class="form-checkbox">
+				Подписаться на новости</label>
+				
 			</form>
 		</div>
 	</footer>

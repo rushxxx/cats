@@ -1,3 +1,555 @@
+/*modern reset css*/
+*,*::before,*::after{box-sizing:border-box}ul[class],ol[class]{padding:0}body,h1,h2,h3,h4,p,ul[class],ol[class],figure,blockquote,dl,dd{margin:0}html{scroll-behavior:smooth}body{min-height:100vh;text-rendering:optimizeSpeed;line-height:1.5}ul[class],ol[class]{list-style:none}a:not([class]){text-decoration-skip-ink:auto}img,picture{max-width:100%;display:block}article>*+*{margin-top:1em}input,button,textarea,select{font:inherit}img:not([alt]){filter:blur(10px)}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}}
+
+/* general style start */
+
 body {
 	font-family: 'Montserrat', sans-serif;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.hide {
+    display: none;
+}
+
+.btn {
+    
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    padding: 22px 0;
+    border-radius: 10px;
+}
+
+.primary {
+    font-weight: bold;
+    background-color: #6EBBD3;
+    border: none;
+}
+
+.secondary {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #CACACA;
+}
+
+/*container*/
+.c {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+.abs {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.img-cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.img-contain {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+
+/*flex start*/
+.flex {
+	display: flex;
+}
+
+.flex-cen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-sa-cen {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.flex-sb-cen {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-col-cen {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+/*flex end*/
+
+/* general style end */
+
+
+/* header start */
+
+.header {
+	width: 100%;
+	height: 250px;
+	color: #fff;
+	position: relative;
+}
+
+.header-bg {
+	z-index: -3;
+}
+
+.header-bg:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(31, 32, 33, 0.79);
+	opacity: 0.88;
+}
+
+.header-wrap {
+	justify-content: space-between;
+	align-items: center;
+	padding: 26px 0;
+}
+
+.logo {
+	width: 78px;
+	height: 78px;
+}
+
+
+/* menu start */
+
+/* burger start */
+.menu-burger {
+    display: none;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #fff;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-burger:hover span:before {
+    top: 10px;
+}
+
+.menu-burger:hover span:after {
+    bottom: 10px;
+}
+
+.menu-burger span{
+    width: 24px;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    transition: .3s;
+}
+
+.menu-burger span:before,
+.menu-burger span:after {
+    position: absolute;
+    content: "";
+    width: 24px;
+    border-bottom: 1px solid #fff;
+    transition: .1s;
+}
+
+.menu-burger span:before {
+    top: 7px;
+}
+
+.menu-burger span:after {
+    bottom: 7px;
+}
+
+.menu-burger.active span {
+    width: 0;
+}
+
+.menu-burger.active span:before {
+    width: 0;
+}
+/*burger end*/
+
+
+.menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+.menu ul,
+.menu li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu > ul {
+    display: flex;
+}
+
+.menu > ul > li {
+    margin-right: 40px;
+    position: relative;
+}
+
+.menu > ul > li:last-child {
+    margin: 0;
+}
+
+.menu a:hover {
+    color: #838383;
+}
+
+.menu > ul > li:hover .sub-menu{
+    opacity: 1;
+    z-index: 1;
+}
+
+.sub-menu {
+    width: 100vw;
+    position: absolute;
+    opacity: 0;
+    z-index: -10;
+    transition: .2s;
+}
+
+
+@media screen and (max-width: 768px){
+    .menu-burger {
+        display: flex;
+        order: 5;
+    }
+
+    .menu-burger.active {
+    	position: absolute;
+    	top: 20px;
+    	right: 20px;
+    	z-index: 20;
+    }
+
+    .menu {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        font-size: 7vw;
+        background-color: #000;
+        transition: .3s;
+    }
+
+    .menu a {
+        margin: 10px 0;
+        display: block;
+    }
+
+    .menu.active {
+        left: 0;
+
+    }
+
+    .menu ul {
+        flex-direction: column;
+        opacity: 1;
+        z-index: 1;
+    }
+    
+    .menu .sub-menu {
+        position: initial;
+        margin-left: 20px;
+    }
+
+}
+/*menu end*/
+
+.header-phone a{
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 29px;
+	color: #FFFFFF;
+}
+
+.header-phone span {
+	font-size: 18px;
+	line-height: 22px;
+	text-align: right;
+}
+
+.find-count-wrap {
+	font-weight: bold;
+	font-size: 38px;
+	line-height: 46px;
+}
+/* header end */
+
+
+
+/* main start */
+
+.main {
+    margin-bottom: 83px;
+}
+
+.sort-wrap {
+	padding: 30px 0;
+}
+
+.sort-text {
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 22px;
+}
+
+.sort-button {
+	border: none;
+	background-color: transparent;
+	font-size: 18px;
+	line-height: 22px;
+	margin-left: 50px;
+}
+
+
+/* card start */
+
+.card-list {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card-item {
+    width: 380px;
+    position: relative;
+    margin: 10px;
+}
+
+.card-promo {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    padding: 9px 18px;
+    color: #fff;
+    background-color: #E62D2D;
+    border-radius: 10px;
+}
+
+.card-heart {
+    width: 46px;
+    height: 40px;
+    position: absolute;
+    top: 35px;
+    right: 35px;
+}
+
+.card-heart-pic {
+    width: 46px;
+    height: 40px;
+    fill: #fff;
+    opacity: .5;
+}
+
+.card-heart-pic.active{
+    opacity: 1;
+}
+
+.card-pic {
+    width: 100%;
+    height: 265px;
+}
+
+.card-desc-wrap {
+    background-color: #F3F3F3;
+    padding: 30px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 20px;
+}
+
+.card-desc {
+    border-left: 4px solid #6EBBD3;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.card-color,
+.card-age,
+.card-foot {
+    max-width: 30%;
+    margin-left: 18px;
+    font-size: 12px;
+    line-height: 15px;
+}
+.color-value {}
+.age-value,
+.foot-value {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.card-price {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+}
+.card-button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #6EBBD3;
+    padding: 22px 0;
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+.btn-off {
+    background-color: #000;
+}
+
+/* card end */
+
+.add-cards {
+    width: 380px;
+    display: block;
+    margin: 17px auto 0;
+}
+
+/* main end */
+
+
+/* footer start */
+
+.footer {
+    background-color: #1F2021;
+    color: #fff;
+}
+.footer .c {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 80px;
+}
+.promo {
+    width: 400px;
+    margin-bottom: 20px;
+}
+.promo-title {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 59px;
+    margin-bottom: 26px;
+}
+.promo-text {
+    font-size: 28px;
+    line-height: 91.2%;
+}
+.subscribe-form {
+    max-width: 620px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.subscribe-form-input {
+    width: 300px;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 22px 33px;
+    border-radius: 10px;
+}
+.subscribe-form button {
+    margin-left: 24px;
+    width: 250px;
+}
+.form-checkbox {
+    margin: 20px 0;
+}
+/* footer end */
+
+
+@media screen and (max-width: 480px){
+
+.header {
+    height: 130px;
+}
+
+.header-wrap {
+    padding: 0;
+}
+
+.header-phone a {
+    font-size: 5.5vw;
+}
+
+.find-count-wrap {
+    font-size: 8.3vw;
+}
+
+.card-item {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.add-cards {
+    width: 100%;
+}
+
+.subscribe-form-input {
+    width: 100%;
+}
+
+.subscribe-form button {
+    width: 100%;
+    margin: 0;
+    order: 2;
+}
+
+.footer .c {
+    padding: 20px;
+}
+
+.promo-title {
+    font-size: 10vw;
+    margin-bottom: 10px;
+}
+
+.promo-text {
+    font-size: 5vw;
+}
+
 }
